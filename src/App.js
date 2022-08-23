@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import ForgotPass from './Components/ForgotPass';
 import Accreditation from './Components/Accreditation';
 import AboutUs from './Components/AboutUs';
-import Videobg from './Components/Videobg';
+//import Videobg from './Components/Videobg';
 import HomePg from './Components/HomePg';
 
 function App() {

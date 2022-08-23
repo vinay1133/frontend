@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./ForgotPass_Style.css";
 import Container from "react-bootstrap/Container";
 import NAVbar from "./NAVbar";
@@ -7,8 +7,11 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Link} from "react-router-dom";
+import PasswordChecklist from "react-password-checklist";
 
 export default function ForgotPass() {
+  const [password,setPassword]=useState("")
+  const [passwordAgain,setPasswordAgain]=useState("")
   return (
     <>
       <NAVbar/>
@@ -97,6 +100,13 @@ export default function ForgotPass() {
                   type="password"
                   required
                   placeholder="Enter your password"
+                  onChange={e => setPassword(e.target.value)}
+                />
+                <PasswordChecklist rules={["minLength","specialChar","number","capital","match"]}
+                  minLength={5}
+                  value={password}
+                  valueAgain={passwordAgain}
+                  style={{fontSize:"12px"}}
                 />
               </Form.Group>
             </Col>
@@ -117,6 +127,7 @@ export default function ForgotPass() {
                   type="password"
                   required
                   placeholder="ReEnter your password"
+                  onChange={e=>setPasswordAgain(e.target.value)}
                 />
               </Form.Group>
             </Col>

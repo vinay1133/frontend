@@ -11,9 +11,10 @@
 body {
   height: 100vh;
   padding: 0px;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: 100% 100%;
-  background-image: url("https://thumbs.dreamstime.com/b/iit-roorkee-central-building-called-james-anderson-208469680.jpg");
+  background-color: lightskyblue;
+  /* background-image: url("https://thumbs.dreamstime.com/b/iit-roorkee-central-building-called-james-anderson-208469680.jpg"); */
   /* background: linear-gradient(110deg, #231955, #3f2e95); */
 }
 
