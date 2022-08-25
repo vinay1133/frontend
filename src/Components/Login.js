@@ -86,14 +86,14 @@ export default function Login() {
             </Col>
           </Row>
 
-          <Row>
+          {/* <Row>
             <Col className="col-12">
               <Form.Group className="mb-3">
                 <Form.Label>Security Code</Form.Label>
                 <Form.Control type="number" placeholder="Enter 6-digit code" />
               </Form.Group>
             </Col>
-          </Row>
+          </Row> */}
 
           <Row
             className="col-12 mb-3"

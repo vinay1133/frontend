@@ -1,4 +1,4 @@
-import "./register_style.css";
+import "./Login_Style.css";
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -9,9 +9,7 @@ import { Link } from "react-router-dom";
 import NAVbar from "./NAVbar";
 import PasswordChecklist from "react-password-checklist";
 
-export default function Register() {
-  const [password, setPassword] = useState("");
-  const [passwordAgain, setPasswordAgain] = useState("");
+export default function UploadFileHEI() {
 
   return (
     <>
@@ -24,7 +22,7 @@ export default function Register() {
           alignItems: "center",
           margin: "auto",
           width: "100%",
-          maxWidth: "600px",
+          maxWidth: "700px",
           marginTop: "10px",
           background: "#fff",
           padding: "15px 50px",
@@ -32,13 +30,14 @@ export default function Register() {
           fontSize: "16px",
         }}
       >
-        <div class="title">Registration</div>
-        <Form action="./UploadFileHEI">
+        <div class="title">Upload Documents</div>
+        <Form method="post">
+
           <Row>
             <Col>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>
-                  First Name{" "}
+                  College Name{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
@@ -54,14 +53,14 @@ export default function Register() {
                 <Form.Control
                   type="text"
                   required
-                  placeholder="Enter your first name"
+                  placeholder="Enter your college name"
                 />
               </Form.Group>
             </Col>
             <Col>
               <Form.Group className="mb-3">
                 <Form.Label>
-                  Last Name{" "}
+                  University Name{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
@@ -77,7 +76,7 @@ export default function Register() {
                 <Form.Control
                   type="text"
                   required
-                  placeholder="Enter your last name"
+                  placeholder="Enter your University name"
                 />
               </Form.Group>
             </Col>
@@ -87,7 +86,7 @@ export default function Register() {
             <Col>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>
-                  DOB{" "}
+                  College Consent Letter{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
@@ -100,17 +99,13 @@ export default function Register() {
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
                   </svg>
                 </Form.Label>
-                <Form.Control
-                  type="date"
-                  required
-                  placeholder="Enter your first name"
-                />
+                <Form.Control type="file" action="api/uploadFile" required />
               </Form.Group>
             </Col>
             <Col>
               <Form.Group className="mb-3">
                 <Form.Label>
-                  Gender{" "}
+                  University Affiliation Letter{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
@@ -123,25 +118,14 @@ export default function Register() {
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
                   </svg>
                 </Form.Label>
-                <p
-                  style={{
-                    border: "0.5px solid lightgray",
-                    padding: "5.5px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  Male <input type="radio" name="gender" id="male" required />{" "}
-                  Female{" "}
-                  <input type="radio" name="gender" id="female" required />{" "}
-                  Other <input type="radio" name="gender" id="other" required />
-                </p>
+                <Form.Control type="file" action="api/uploadFile" required />
               </Form.Group>
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-2" controlId="formBasicEmail">
                 <Form.Label>
                   Email{" "}
                   <svg
@@ -161,100 +145,7 @@ export default function Register() {
                   required
                   placeholder="Enter your email"
                 />
-              </Form.Group>
-              {/* <Button className="mb-2" variant="success" type="submit">
-                Verify
-              </Button> */}
-            </Col>
-            <Col>
-              <Form.Group className="mb-3">
-                <Form.Label>
-                  Phone Number{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="8"
-                    fill="red"
-                    class="bi bi-asterisk"
-                    viewBox="0 0 16 16"
-                    style={{ marginBottom: "6px" }}
-                  >
-                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                  </svg>
-                </Form.Label>
-                <Form.Control
-                  type="tel"
-                  required
-                  placeholder="Enter your phone no."
-                />
-              </Form.Group>
-              {/* <Button className="mb-2" variant="success" type="submit">
-                Verify
-              </Button> */}
-            </Col>
-          </Row>
-
-         <Row>
-            <Col className="col-6">
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>
-                  Password{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="8"
-                    fill="red"
-                    class="bi bi-asterisk"
-                    viewBox="0 0 16 16"
-                    style={{ marginBottom: "6px" }}
-                  >
-                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                  </svg>
-                </Form.Label>
-                <Form.Control
-                  type="password"
-                  required
-                  placeholder="Enter your password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <PasswordChecklist
-                  rules={[
-                    "minLength",
-                    "specialChar",
-                    "number",
-                    "capital",
-                    "match",
-                  ]}
-                  minLength={5}
-                  value={password}
-                  valueAgain={passwordAgain}
-                  style={{ fontSize: "12px" }}
-                />
-              </Form.Group>
-            </Col>
-            <Col className="col-6">
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>
-                  Confirm Password{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="8"
-                    fill="red"
-                    class="bi bi-asterisk"
-                    viewBox="0 0 16 16"
-                    style={{ marginBottom: "6px" }}
-                  >
-                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                  </svg>
-                </Form.Label>
-                <Form.Control
-                  type="password"
-                  required
-                  placeholder="ReEnter your password"
-                  onChange={(e) => setPasswordAgain(e.target.value)}
-                />
-              </Form.Group>
+              </Form.Group> 
             </Col>
           </Row>
 
@@ -270,7 +161,7 @@ export default function Register() {
           <Row style={{ textAlign: "center" }}>
             <Col>
               <Button variant="primary" type="submit">
-                Next
+                Upload Documents
               </Button>
             </Col>
           </Row>
