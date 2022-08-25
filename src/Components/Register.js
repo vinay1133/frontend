@@ -204,7 +204,7 @@ export default function Login() {
             </Col>
           </Row>
 
-          <Row style={{ textAlign: "center" }}>
+          <Row className="mb-2" style={{ textAlign: "center" }}>
             <Col>
               Already have an account? <Link to="/Login" style={{textDecoration:"none"}}>Login</Link>
             </Col>

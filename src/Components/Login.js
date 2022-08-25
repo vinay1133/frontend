@@ -109,7 +109,7 @@ export default function Login() {
 
           <Row style={{ textAlign: "center" }}>
             <Col>
-              <Button variant="primary" type="submit">
+              <Button variant="success" type="submit">
                 Submit
               </Button>
             </Col>

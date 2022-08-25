@@ -1,0 +1,17 @@
+.absolute-div {
+position: absolute;
+z-index: 1;
+top: 0;
+left: 0;right: 0;
+bottom: 0;
+}
+
+.search-bar {
+vertical-align: middle;
+margin-top: 14rem;
+}
+
+.me-3 {
+height: 4rem;
+width: 30rem;
+}

@@ -10,7 +10,7 @@ export default function NAVbar() {
   return (
     <>
       <Navbar variant="dark" expand="lg" style={{background: 'linear-gradient(110deg, #231955, #3f2e95)'}}>
-        <Navbar.Brand href="/">UGC-Checked</Navbar.Brand>
+        <Navbar.Brand href="/"><img src={require('./images/OurIcon.png')} style={{height:"32px",width:"32px"}}/> UGC-Checked</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
