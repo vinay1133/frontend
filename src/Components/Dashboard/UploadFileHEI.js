@@ -1,4 +1,4 @@
-import "./Login_Style.css";
+// import "./Login_Style.css";
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -6,14 +6,17 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-import NAVbar from "./NAVbar";
+import NAVbar from "../NAVbar";
 import PasswordChecklist from "react-password-checklist";
+import MenuButton from "./MenuButton";
 
 export default function UploadFileHEI() {
-
   return (
     <>
       <NAVbar />
+      <div style={{ padding: "1rem", marginLeft: "2rem" }}>
+        <MenuButton />
+      </div>
       <Container
         fluid
         style={{
@@ -32,7 +35,6 @@ export default function UploadFileHEI() {
       >
         <div class="title">Upload Documents</div>
         <Form method="post">
-
           <Row>
             <Col>
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -145,7 +147,7 @@ export default function UploadFileHEI() {
                   required
                   placeholder="Enter your email"
                 />
-              </Form.Group> 
+              </Form.Group>
             </Col>
           </Row>
 

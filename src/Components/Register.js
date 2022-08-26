@@ -44,7 +44,7 @@ export default function Register() {
         }}
       >
         <div class="title">Registration</div>
-        <Form action="./UploadFileHEI">
+        <Form>
           <Row>
             <Col className="col-6">
               <Form.Group className="mb-3" controlId="formBasicEmail">
