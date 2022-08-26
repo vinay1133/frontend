@@ -26,10 +26,10 @@ function DisplayTable() {
 
   return (
     <div>
-      <input
+      {/* <input
         type="text"
         style={{ width: "10rem", height: "2rem", textAlign: "center" }}
-      />
+      /> */}
       <table class="table table-striped">
         <thead>
           <tr>

@@ -30,7 +30,7 @@ export default function Accreditation() {
           borderRadius: "10px",
         }}
       >
-        <div class="title">Accreditation Details</div>
+        <div class="title">Institute Details</div>
         <Form action="#" style={{ fontSize: "medium" }}>
           <Row>
             <Col>
@@ -120,22 +120,61 @@ export default function Accreditation() {
           <Row>
             <Col className="col-4">
               <Form.Group className="mb-3">
-                <Form.Label>State</Form.Label>
+                <Form.Label>
+                  Location{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="8"
+                    fill="red"
+                    class="bi bi-asterisk"
+                    viewBox="0 0 16 16"
+                    style={{ marginBottom: "6px" }}
+                  >
+                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                  </svg>
+                </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter state of institute"
+                  placeholder="Enter location of institute"
                 />
               </Form.Group>
             </Col>
             <Col className="col-4">
               <Form.Group className="mb-3">
-                <Form.Label>Pincode</Form.Label>
+                <Form.Label>
+                  Pincode{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="8"
+                    fill="red"
+                    class="bi bi-asterisk"
+                    viewBox="0 0 16 16"
+                    style={{ marginBottom: "6px" }}
+                  >
+                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                  </svg>
+                </Form.Label>
                 <Form.Control type="text" placeholder="Enter pincode" />
               </Form.Group>
             </Col>
             <Col className="col-4">
               <Form.Group className="mb-3">
-                <Form.Label>Social Media Handles</Form.Label>
+                <Form.Label>
+                  Social Media Handles{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="8"
+                    fill="red"
+                    class="bi bi-asterisk"
+                    viewBox="0 0 16 16"
+                    style={{ marginBottom: "6px" }}
+                  >
+                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                  </svg>
+                </Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Enter social media handles"
@@ -147,10 +186,23 @@ export default function Accreditation() {
           <Row>
             <Col className="col-6">
               <Form.Group className="mb-3">
-                <Form.Label>Type of College</Form.Label>
+                <Form.Label>
+                  Type of College{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="8"
+                    fill="red"
+                    class="bi bi-asterisk"
+                    viewBox="0 0 16 16"
+                    style={{ marginBottom: "6px" }}
+                  >
+                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                  </svg>
+                </Form.Label>
                 <Form.Control
                   type="text"
-                  list="orgname"
+                  list="typeofcol"
                   required
                   placeholder="Enter type of college"
                 />
@@ -164,7 +216,20 @@ export default function Accreditation() {
             </Col>
             <Col className="col-6">
               <Form.Group className="mb-3">
-                <Form.Label>Registration Number</Form.Label>
+                <Form.Label>
+                  Registration Number{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="8"
+                    fill="red"
+                    class="bi bi-asterisk"
+                    viewBox="0 0 16 16"
+                    style={{ marginBottom: "6px" }}
+                  >
+                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                  </svg>
+                </Form.Label>
                 <Form.Control type="number" placeholder="Enter pincode" />
               </Form.Group>
             </Col>
@@ -180,12 +245,25 @@ export default function Accreditation() {
           <Row>
             <Col className="col-12">
               <Form.Group className="mb-3">
-                <Form.Label>Courses Offered</Form.Label>
+                <Form.Label>
+                  Courses Offered{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="8"
+                    fill="red"
+                    class="bi bi-asterisk"
+                    viewBox="0 0 16 16"
+                    style={{ marginBottom: "6px" }}
+                  >
+                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+                  </svg>
+                </Form.Label>
                 <Form.Control
                   type="text"
                   list="orgname"
                   required
-                  placeholder="Enter organization name"
+                  placeholder="Enter contact number"
                 />
               </Form.Group>
             </Col>

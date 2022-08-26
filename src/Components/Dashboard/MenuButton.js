@@ -36,7 +36,7 @@ export default function MenuButton() {
           </a>
           <br />
           <a
-            href="/UploadFileHEI"
+            href="/uploadfile"
             style={{ color: "orangered", fontSize: "20px", padding: "2rem" }}
           >
             Upload Documents

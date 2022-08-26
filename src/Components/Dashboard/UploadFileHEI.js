@@ -7,7 +7,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import NAVbar from "../NAVbar";
-import PasswordChecklist from "react-password-checklist";
 import MenuButton from "./MenuButton";
 
 export default function UploadFileHEI() {
@@ -79,7 +78,33 @@ export default function UploadFileHEI() {
                   type="text"
                   required
                   placeholder="Enter your University name"
+                  list="orgname"
                 />
+                <datalist id="orgname">
+                  <option value="Acharaya N.G.Ranga Agricultural University" />
+                  <option value="Acharya Nagarjuna University" />
+                  <option value="Adikavi Nannaya University" />
+                  <option value="Kanyashree University" />
+                  <option value="Hindi University" />
+                  <option value="Alipurduar University" />
+                  <option value="Harichand Guruchand University" />
+                  <option value="National Academy of Legal Studies & Research University" />
+                  <option value="Jawaharlal Nehru Technological University" />
+                  <option value="Marathwada Agricultural University" />
+                  <option value="Mumbai University" />
+                  <option value="Mahatma Phule Krishi Vidyapeeth" />
+                  <option value="Rani Channamma University" />
+                  <option value="Vijayanagara Sri Krishnadevaraya University" />
+                  <option value="Karnataka Samskrit University" />
+                  <option value="KSGH Music and Performing Arts University" />
+                  <option value="Rajiv Gandhi University of Health Science" />
+                  <option value="Gujarat University of Transplantation Sciences" />
+                  <option value="Institute of Infrastructure Technology Research and Management" />
+                  <option value="Navsari Agriculture University" />
+                  <option value="Bhakta Kavi Narsinh Mehta University" />
+                  <option value="Shri Govind Guru University" />
+                  <option value="Sardar Krushinagar Dantiwada Agricultural University" />
+                </datalist>
               </Form.Group>
             </Col>
           </Row>
@@ -148,15 +173,6 @@ export default function UploadFileHEI() {
                   placeholder="Enter your email"
                 />
               </Form.Group>
-            </Col>
-          </Row>
-
-          <Row className="mb-2" style={{ textAlign: "center" }}>
-            <Col>
-              Already have an account?{" "}
-              <Link to="/Login" style={{ textDecoration: "none" }}>
-                Login
-              </Link>
             </Col>
           </Row>
 
