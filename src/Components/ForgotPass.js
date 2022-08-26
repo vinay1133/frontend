@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./ForgotPass_Style.css";
 import Container from "react-bootstrap/Container";
 import NAVbar from "./NAVbar";
@@ -6,15 +6,25 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import PasswordChecklist from "react-password-checklist";
 
 export default function ForgotPass() {
-  const [password,setPassword]=useState("")
-  const [passwordAgain,setPasswordAgain]=useState("")
+  // const [password,setPassword]=useState("")
+  // const [passwordAgain,setPasswordAgain]=useState("")
+
+  function matchPassword() {
+    var pw1 = document.getElementById("psw1");
+    var pw2 = document.getElementById("psw2");
+    if (pw1 != pw2) {
+      alert("Passwords did not match");
+    } else {
+      alert("Password created successfully");
+    }
+  }
   return (
     <>
-      <NAVbar/>
+      <NAVbar />
       <Container
         fluid
         style={{
@@ -24,7 +34,7 @@ export default function ForgotPass() {
           margin: "auto",
           width: "100%",
           maxWidth: "600px",
-          marginTop: "15px",
+          marginTop: "10px",
           background: "#fff",
           padding: "25px 50px",
           borderRadius: "10px",
@@ -36,19 +46,25 @@ export default function ForgotPass() {
             <Col className="col-12">
               <Form.Group className="mb-1" controlId="formBasicEmail">
                 <Form.Label>
-                  Email <svg
+                  Email{" "}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
                     height="8"
                     fill="red"
                     class="bi bi-asterisk"
                     viewBox="0 0 16 16"
-                    style={{marginBottom:"6px"}}
+                    style={{ marginBottom: "6px" }}
                   >
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
                   </svg>
                 </Form.Label>
-                <Form.Control type="email" required placeholder="Enter your email" />
+                <Form.Control
+                  className="mb-2"
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                />
               </Form.Group>
               <Button className="mb-3" variant="success" type="submit">
                 Generate OTP?
@@ -59,18 +75,22 @@ export default function ForgotPass() {
           <Row>
             <Col className="col-12">
               <Form.Group className="mb-1" controlId="formBasicPassword">
-                <Form.Label>OTP <svg
+                <Form.Label>
+                  OTP{" "}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
                     height="8"
                     fill="red"
                     class="bi bi-asterisk"
                     viewBox="0 0 16 16"
-                    style={{marginBottom:"6px"}}
+                    style={{ marginBottom: "6px" }}
                   >
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                  </svg></Form.Label>
+                  </svg>
+                </Form.Label>
                 <Form.Control
+                  className="mb-2"
                   type="password"
                   required
                   placeholder="Enter the 6-digit OTP"
@@ -85,68 +105,76 @@ export default function ForgotPass() {
           <Row>
             <Col className="col-6">
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password <svg
+                <Form.Label>
+                  Password{" "}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
                     height="8"
                     fill="red"
                     class="bi bi-asterisk"
                     viewBox="0 0 16 16"
-                    style={{marginBottom:"6px"}}
+                    style={{ marginBottom: "6px" }}
                   >
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                  </svg></Form.Label>
+                  </svg>
+                </Form.Label>
                 <Form.Control
                   type="password"
-                  required
+                  id="psw1"
+                  name="psw"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                   placeholder="Enter your password"
-                  onChange={e => setPassword(e.target.value)}
-                />
-                <PasswordChecklist rules={["minLength","specialChar","number","capital","match"]}
-                  minLength={5}
-                  value={password}
-                  valueAgain={passwordAgain}
-                  style={{fontSize:"12px"}}
+                  required
                 />
               </Form.Group>
             </Col>
             <Col className="col-6">
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Confirm Password <svg
+                <Form.Label>
+                  Confirm Password{" "}
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
                     height="8"
                     fill="red"
                     class="bi bi-asterisk"
                     viewBox="0 0 16 16"
-                    style={{marginBottom:"6px"}}
+                    style={{ marginBottom: "6px" }}
                   >
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                  </svg></Form.Label>
+                  </svg>
+                </Form.Label>
                 <Form.Control
                   type="password"
+                  id="psw1"
+                  name="psw"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                  placeholder="Enter your password"
                   required
-                  placeholder="ReEnter your password"
-                  onChange={e=>setPasswordAgain(e.target.value)}
                 />
               </Form.Group>
             </Col>
           </Row>
-          
+
           <Row
             className="col-12 mb-2"
-            style={{ textAlign: "center", fontSize: "small" }}
+            style={{ textAlign: "center", fontSize: "medium" }}
           >
             <Col>
-              Go back to <Link to="/login" style={{ textDecoration: "none" }}>
+              Go back to{" "}
+              <Link to="/login" style={{ textDecoration: "none" }}>
                 Login
-              </Link>?
+              </Link>
+              ?
             </Col>
           </Row>
 
           <Row style={{ textAlign: "center" }}>
             <Col>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" onClick={matchPassword}>
                 Submit
               </Button>
             </Col>

@@ -8,6 +8,8 @@ import AboutUs from './Components/AboutUs';
 //import Videobg from './Components/Videobg';
 import HomePg from './Components/HomePg';
 import UploadFileHEI from './Components/UploadFileHEI';
+import DisplayTable from './Components/DisplayTable';
+import SearchData from './Components/SearchData';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path='/accreditation' element={<Accreditation/>} />
           <Route path='/aboutus' element={<AboutUs/>} />
           <Route path='/UploadFileHEI' element={<UploadFileHEI/>} /> 
+          <Route path='/displaytable' element={<DisplayTable/>} /> 
+          <Route path='/searchdata' element={<SearchData/>} /> 
         </Routes>
       </Router>
   );

@@ -10,8 +10,18 @@ import NAVbar from "./NAVbar";
 import PasswordChecklist from "react-password-checklist";
 
 export default function Register() {
-  const [password, setPassword] = useState("");
-  const [passwordAgain, setPasswordAgain] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [passwordAgain, setPasswordAgain] = useState("");
+
+  function matchPassword() {
+    var pw1 = document.getElementById("psw1");
+    var pw2 = document.getElementById("psw2");
+    if (pw1 != pw2) {
+      alert("Passwords did not match");
+    } else {
+      alert("Password created successfully");
+    }
+  }
 
   return (
     <>
@@ -25,20 +35,21 @@ export default function Register() {
           margin: "auto",
           width: "100%",
           maxWidth: "600px",
-          marginTop: "10px",
+          marginTop: "40px",
           background: "#fff",
           padding: "15px 50px",
           borderRadius: "10px",
           fontSize: "16px",
+          // principal, college dropbox, email, password, mobile no.
         }}
       >
         <div class="title">Registration</div>
         <Form action="./UploadFileHEI">
           <Row>
-            <Col>
+            <Col className="col-6">
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>
-                  First Name{" "}
+                  Principal's Name:{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
@@ -58,10 +69,10 @@ export default function Register() {
                 />
               </Form.Group>
             </Col>
-            <Col>
-              <Form.Group className="mb-3">
+            <Col className="col-6">
+              <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>
-                  Last Name{" "}
+                  College Name{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="8"
@@ -76,65 +87,35 @@ export default function Register() {
                 </Form.Label>
                 <Form.Control
                   type="text"
+                  list="orgname"
                   required
-                  placeholder="Enter your last name"
+                  placeholder="Enter college name"
                 />
-              </Form.Group>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>
-                  DOB{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="8"
-                    fill="red"
-                    class="bi bi-asterisk"
-                    viewBox="0 0 16 16"
-                    style={{ marginBottom: "6px" }}
-                  >
-                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                  </svg>
-                </Form.Label>
-                <Form.Control
-                  type="date"
-                  required
-                  placeholder="Enter your first name"
-                />
-              </Form.Group>
-            </Col>
-            <Col>
-              <Form.Group className="mb-3">
-                <Form.Label>
-                  Gender{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="8"
-                    fill="red"
-                    class="bi bi-asterisk"
-                    viewBox="0 0 16 16"
-                    style={{ marginBottom: "6px" }}
-                  >
-                    <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
-                  </svg>
-                </Form.Label>
-                <p
-                  style={{
-                    border: "0.5px solid lightgray",
-                    padding: "5.5px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  Male <input type="radio" name="gender" id="male" required />{" "}
-                  Female{" "}
-                  <input type="radio" name="gender" id="female" required />{" "}
-                  Other <input type="radio" name="gender" id="other" required />
-                </p>
+                <datalist id="orgname">
+                  <option value="Acharaya N.G.Ranga Agricultural University" />
+                  <option value="Acharya Nagarjuna University" />
+                  <option value="Adikavi Nannaya University" />
+                  <option value="Kanyashree University" />
+                  <option value="Hindi University" />
+                  <option value="Alipurduar University" />
+                  <option value="Harichand Guruchand University" />
+                  <option value="National Academy of Legal Studies & Research University" />
+                  <option value="Jawaharlal Nehru Technological University" />
+                  <option value="Marathwada Agricultural University" />
+                  <option value="Mumbai University" />
+                  <option value="Mahatma Phule Krishi Vidyapeeth"/>
+                  <option value="Rani Channamma University" />
+                  <option value="Vijayanagara Sri Krishnadevaraya University" />
+                  <option value="Karnataka Samskrit University" />
+                  <option value="KSGH Music and Performing Arts University" />
+                  <option value="Rajiv Gandhi University of Health Science" />
+                  <option value="Gujarat University of Transplantation Sciences" />
+                  <option value="Institute of Infrastructure Technology Research and Management"/>
+                  <option value="Navsari Agriculture University" />
+                  <option value="Bhakta Kavi Narsinh Mehta University" />
+                  <option value="Shri Govind Guru University" />
+                  <option value="Sardar Krushinagar Dantiwada Agricultural University" />
+                </datalist>
               </Form.Group>
             </Col>
           </Row>
@@ -194,7 +175,7 @@ export default function Register() {
             </Col>
           </Row>
 
-         <Row>
+          <Row>
             <Col className="col-6">
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>
@@ -211,7 +192,7 @@ export default function Register() {
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
                   </svg>
                 </Form.Label>
-                <Form.Control
+                {/* <Form.Control
                   type="password"
                   required
                   placeholder="Enter your password"
@@ -229,6 +210,15 @@ export default function Register() {
                   value={password}
                   valueAgain={passwordAgain}
                   style={{ fontSize: "12px" }}
+                /> */}
+                <Form.Control
+                  type="password"
+                  id="psw1"
+                  name="psw"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                  placeholder="Enter your password"
+                  required
                 />
               </Form.Group>
             </Col>
@@ -248,11 +238,20 @@ export default function Register() {
                     <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
                   </svg>
                 </Form.Label>
-                <Form.Control
+                {/* <Form.Control
                   type="password"
                   required
                   placeholder="ReEnter your password"
                   onChange={(e) => setPasswordAgain(e.target.value)}
+                /> */}
+                <Form.Control
+                  type="password"
+                  id="psw2"
+                  name="psw"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                  placeholder="ReEnter your password"
+                  required
                 />
               </Form.Group>
             </Col>
@@ -269,8 +268,8 @@ export default function Register() {
 
           <Row style={{ textAlign: "center" }}>
             <Col>
-              <Button variant="primary" type="submit">
-                Next
+              <Button variant="primary" type="submit" onClick={matchPassword}>
+                Submit
               </Button>
             </Col>
           </Row>

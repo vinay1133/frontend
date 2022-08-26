@@ -22,16 +22,16 @@ export default function HomePg() {
     <Container style={{display:"grid"}}>
       
       <Row>
-        <Col style={{width: "10rem",
+        {/* <Col style={{width: "10rem",
           background: "wheat",
           margin:"10px",
           padding: "10px",
           borderRadius: "10px"}}>
 
-          </Col>
+          </Col> */}
         <Col>
         <div style={{textAlign:"center"}}>
-          <img src={require("./images/ugc_logo.jpg")} alt="ugc_logo"/>
+          <img src={require("./images/ugc_logo.png")} alt="ugc_logo"/>
         </div>
         </Col>
         </Row>
@@ -103,7 +103,7 @@ export default function HomePg() {
             />
             <Carousel.Caption>
             <p>
-              <a href="https://www.annauniv.edu/nwsnew/" target="_blank" style={{color:"white",fontSize:"1.3rem"}}>Indian Institute of Technology, Delhi</a>
+              <a href="https://home.iitd.ac.in/" target="_blank" style={{color:"white",fontSize:"1.3rem"}}>Indian Institute of Technology, Delhi</a>
             </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -111,7 +111,7 @@ export default function HomePg() {
       </Container>
       <Container>
         <div style={{textAlign:"center",padding:"1rem"}}>
-          <Button style={{width:"25rem",height:"3rem",backgroundColor:"Green",textAlign:"center",fontSize:"1.2rem"}}>Which college are you looking for? </Button>
+          <Button style={{width:"25rem",height:"3rem",backgroundColor:"Green",textAlign:"center",fontSize:"1.2rem"}}><Link to={"/displaytable"} style={{textDecoration:"none",color:"white"}}>Which college are you looking for?</Link> </Button>
         </div>
       </Container>
     </>
